@@ -11,19 +11,19 @@
 #define EYE_BLINK_COLOR "0 25 25"
 
 // Hardware description
-//#define HAS_GRIPPER
+#define HAS_GRIPPER
 #define HAS_PANTILT
 
 // Only define one of these
-#define HAS_DCMOTOR
-//#define HAS_SERVO
+//#define HAS_DCMOTOR
+#define HAS_SERVO
 //#define DRIVE_TRAIN DCMOTOR_EXIST
 
 // spend memory on older features
 #define I2C_LIGHTS
 //#define I2C_MOTOR
 
-#define WANT_SERIAL
+//#define WANT_SERIAL
 // (647-480) = 167 bytes
 #define WANT_BLINK
 // (470-262) = 188 bytes
