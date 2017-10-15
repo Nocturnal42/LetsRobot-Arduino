@@ -283,10 +283,13 @@ void cmd_echo(void) {
 /*
  * Teensy reset code from https://www.pjrc.com/teensy/jump_to_bootloader.html
  */
+/* This code is teensy 2.0 specific, and if its purpose is to allow reprogramming
+ *  without needing to press the reset, teensy 3.0 supports that already.
+ * 
 void cmd_reset(void) {
     volatile static int barrier;
 
-    #ifndef TEENSY
+    #ifndef TEENSY 
     Serial.println("Reset not supported");
     return;
     #endif
@@ -307,6 +310,11 @@ void cmd_reset(void) {
     asm volatile("jmp 0x7E00");
 
     ERR("Did the reset fail?");
+}
+*/
+void cmd_reset(void) {
+    Serial.println("Reset not supported");
+    return;
 }
 
 #ifdef WANT_SERIAL
